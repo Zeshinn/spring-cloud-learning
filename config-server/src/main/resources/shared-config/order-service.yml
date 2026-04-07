@@ -1,0 +1,14 @@
+server:
+  port: 8081
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/
+resilience4j:
+  circuitbreaker:
+    instances:
+      inventory:
+        registerHealthIndicator: true
+        slidingWindowSize: 5 # Trip circuit after 5 calls
+        failureRateThreshold: 50 # Trip if 50% of calls fail
+        waitDurationInOpenState: 5s # Wait 5 seconds before half-open state

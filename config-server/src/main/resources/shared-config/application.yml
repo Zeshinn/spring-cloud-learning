@@ -1,0 +1,4 @@
+management:
+  tracing:
+    sampling:
+      probability: 1.0 # Tells Micrometer to capture every single request
